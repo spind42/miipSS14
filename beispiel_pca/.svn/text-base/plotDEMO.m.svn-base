@@ -1,0 +1,15 @@
+
+
+%% demonstration of 2d pca visualization:
+
+clear all
+load demoData
+
+disp('2d pca demo... ')
+plot2DPCA(data2, dataMean2, sortedEigVec2, diag(sortedEigVal2), 1, 1)
+
+
+% demonstration of 3d pca visualization:
+disp('3d pca demo... ')
+plot3DPCA(data3, dataMean3, sortedEigVec3, sortedEigVal3, 1, 1)
+
