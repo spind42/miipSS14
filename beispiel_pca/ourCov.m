@@ -1,5 +1,5 @@
 function [C]=ourCov(D)
-D=D';
+%D=D';
 [n,d]=size(D);
 mm=mean(D);
 for i=1:d
