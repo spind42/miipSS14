@@ -1,33 +1,59 @@
-%function [ output_args ] = pca( daten )
+function [ EVectors,EValues ] = pca( daten )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
-daten = data1
 
-comps = length( daten(:,1) ) % Anzahl der Komponenten
+%load( 'daten.mat' )
+%load( 'demoData.mat' )
+%daten = data1
+%daten = data2;
 
-transp = daten' % transponieren
+
+%comps = length( daten(:,1) ) % Anzahl der Komponenten
+
+%transp = daten'; % transponieren
 
 %koordinatensystem in die "mitte" setzen
-
 %for ind=1:length( transp(:,1) )
-%  m = mean( transp( ind, : ) )
-%   transp( ind, : ) = transp( ind, : ) - m  %mittelwert von der spalte abziehen...
+%  m = mean( transp( ind, : ) );
+%   transp( ind, : ) = transp( ind, : ) - m;  %mittelwert von der spalte abziehen...
 %    
 %end
 
 
-coData = cov( transp ) %TODO: eigene Funktion verwenden!!!!
+%coData = cov( transp ); %TODO: eigene Funktion verwenden!!!!
+coData = ourCov( daten );
 
-size( coData )
-
-[EVectors,EValues] = eig( coData )
-
-EValues = max( EValues, [], 2 )
-
-plot2DPCA( data1, [ 0, 0 ], 0, EVectors, EValues, 0, 0 )
+%size( coData )
 
 
+evals = eig( coData );
 
+[EVectors,EValues] = eig( coData );
+
+%EValues = max( EValues, [], 2 );
+%
+%if EValues == evals
+%    disp( 'is equal')
+%else
+%    disp( 'problem not equal')
+%    EValues
+%    evals
 %end
+
+[EValues,IND] = sort( evals, 'descend' );
+
+EVectors = EVectors(:,IND);
+
+
+%EVectors
+%EValues
+
+
+%daten
+
+%reconstructed = daten;
+%plot2DPCA( daten, mean( daten ) , reconstructed, EVectors, EValues, 0, 0 )
+
+end
 
