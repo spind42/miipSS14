@@ -1,57 +1,28 @@
 function RUN
 close all
 clear
-
-aufgabe1;
-
-aufgabe2;
-
+Aufgabe1;
 end
 
 % Aufgabe 1 a&b %
-function aufgabe1
+function Aufgabe1
 load('daten.mat');
-
-
 D1=ourCov(data1);
 D2=ourCov(data2);
 D3=ourCov(data3);
 D4=ourCov(data4);
 
 
-
-
-plot(data1','.')
+plot(data1(1,:), data1(2,:), '.')
 axis equal
 figure
-plot(data2','.')
+plot(data2(1,:), data2(2,:), '.')
 axis equal
 figure
-plot(data3','.')
+plot(data3(1,:), data3(2,:), '.')
 axis equal
 figure
-plot(data4','.')
+plot(data4(1,:), data4(2,:), '.')
 axis equal
-
-
-end
-
-function aufgabe2
-
-load('daten.mat');
-load( 'demoData.mat');
-
-data = data2;
-
-[EVectors, EValues] = pca( data );
-dummyReconstruction = data;  % here you would use your reconstructed data
-dataMean = mean( data );
-
-plot2DPCA(data, dataMean, dummyReconstruction, EVectors, EValues, 1, 1)
-
-
-data = data3;
-
-
 end
 
