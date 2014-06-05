@@ -2,6 +2,9 @@ function RUN
 close all
 clear
 Aufgabe1;
+Aufgabe2;
+Aufgabe3;
+Aufgabe4;
 end
 
 % Aufgabe 1 a&b %
@@ -25,4 +28,5 @@ figure
 plot(data4(1,:), data4(2,:), '.')
 axis equal
 end
+
 
