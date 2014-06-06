@@ -1,6 +1,6 @@
 %ad Aufgabe 5a
-function [shape] = generateShape( meanshape, vecs, b )
+function [shape] = generateShape( meanshape, EVecs, b )
 
-    shape=meanshape + vecs*b';
+    shape=meanshape + EVecs*b';
 
 end
