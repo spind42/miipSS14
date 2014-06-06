@@ -1,3 +1,8 @@
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
 % Aufgabe 5%
 function Aufgabe5
 load ('shapes.mat');

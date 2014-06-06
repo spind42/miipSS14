@@ -1,6 +1,8 @@
-
-
-
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
 % Aufgabe 3 %
 function Aufgabe3
 
@@ -15,8 +17,6 @@ X = bsxfun( @minus, data, meanvec ); %zeilen mittelwert abziehen
 
 
 % Aufgabe 3a - Projektion auf den Hauptvektor %
-%size( EVec )
-%size( X )
  
 P = ( EVec(:,1)'*X);
 Rec = bsxfun( @plus, (EVec(:,1)*P) , meanvec); % Rekonstruktion

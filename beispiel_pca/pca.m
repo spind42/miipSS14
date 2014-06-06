@@ -1,17 +1,19 @@
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
+% Aufgabe 2
 function [ EVectors,EValues ] = pca( daten )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
-
 
 load( 'daten3d.mat' )
 %load( 'demoData.mat' )
-daten = daten;
+%daten = daten;
 %daten = data2;
 
 
 %coData = cov( transp ); %TODO: eigene Funktion verwenden!!!!
 coData = ourCov( daten );
-
 
 %evals = eig( coData );
 
