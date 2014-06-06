@@ -16,22 +16,22 @@ meanshape = mean(shapes,2); %meanshape%
 
 mats=bsxfun(@minus,shapes,meanshape)    %Meanmatrix%
 
-[EVec,EVal]=pca(shapes);
+[EVec,EVal]=pca(shapes');
 
 
 
-hv = length(EVec(:,1));    %Hauptvektoren
+hv = i;    %Hauptvektoren
 
+tvec = EVec(:,1:hv);    % temp variable
+tval = EVal(1:hv);
 
-vecs = EVec(:,1:14);    % imagesc(vecs); figure(gcf) => 14 Hauptvektoren%
-vals = EVal(1:14);
-
+i = 1;
 for i = 1:hv
     figure;
-    for s = linspace(-3*sqrt(vals(i)),3*sqrt(vals(i)),10), % |3x sigma| % 
-        b = zeros(1,14);
-        b(i) = s;
-        plotShape(meanshape, vecs, b);
+    for s = linspace(-3*sqrt(tval(i)),3*sqrt(tval(i)), 10 ), % | +- 3 Lambda bzw. Standardabweichung | % 
+        b = zeros(1,hv); %alles auf null 
+        b(i) = s; %bis auf eines auf standardabweichung
+        plotShape(meanshape, tvec, b);
         axis equal;
         hold on
     end
@@ -40,37 +40,55 @@ for i = 1:hv
 end
 
 
-% Aufgabe 5.c, plot(cumsum(vals)/sum(vals)) zeigt die Eigenwertkurve%
-% Gesamtvarianz 80:n=3 %
+
+
+
+%Aufgabe 5c
 figure;
 
+%Berechnung benötigter hauptkomponenten
+csum = cumsum( tval )
+csum = csum / sum( tval ) %prozentzahlen 
 
-EVeca=vecs(:,1:3);
-b=randn(1,3).*1.281552;     %Sigma-Bereich für 80% Varianz%
-plotShape(meanshape,EVeca,b);
+%Gesamtvarianz 100%
+%alle Komponenten: 100%
+b = randn(1,hv).*sqrt( tval(1) ); %TODO: * standardabweichung ? Hauptvektoren
+plotShape( meanshape, tvec( : , 1:hv ), b );
+axis equal
+%title('100% Varianz')
 hold on
-axis equaldaten = data1;
 
-% Gesamtvarianz 90:n=3 %
-%vecb=vecs(:,1:3);
-%b=randn(1,3).*1.644854;     %Sigma-Bereich für 90% Varianz%
-%plotShape(vecb,meanshape,b);
-%hold on
-%axis equal
+%Gesamtvarianz 95%
+% 5 Komponenten: 96.33%
+b = randn(1,5).*sqrt( tval(5) )
+plotShape( meanshape, tvec(:,1:5), b );
+axis equal
+%title('95% Varianz')
+hold on
 
-% Gesamtvarianz 95:n=5 %
-%vecc=vecs(:,1:5);
-%b=randn(1,5).*1.959964;     %Sigma-Bereich für 95% Varianz%
-%plotShape(vecc,meanshape,b);
-%axis equal
-%hold on
+%Gesamtvarianz 90%
+% 3 Komponenten notwendig: 90.58%
+b = randn(1,3).*sqrt( tval( 3 ) ) 
+plotShape( meanshape, tvec(:,1:3), b );
+axis equal
+%title('95% Varianz')
+hold on
 
-% Gesamtvarianz 100:n=13     %Sigma-Bereich für 100% Varianz%
-%vecc=vecs(:,1:13);
-%b=randn(1,13).*7;
-%plotShape(vecc,meanshape,b);
-%axis equal
-%hold on
+%Gesamtvarianz 80%
+% 3 Komponenten notwendig: 90.58% (2 wären 0.7928)
+b = randn(1,3).*sqrt( tval(3) )
+plotShape( meanshape, tvec(:,1:3), b );
+axis equal
+%title('95% Varianz')
+
+
+
+
 end
+
+
+
+
+
 
 
