@@ -1,3 +1,8 @@
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
 function RUN
 close all
 clear
@@ -5,6 +10,7 @@ Aufgabe1;
 Aufgabe2;
 Aufgabe3;
 Aufgabe4;
+Aufgabe5;
 end
 
 % Aufgabe 1 a&b %

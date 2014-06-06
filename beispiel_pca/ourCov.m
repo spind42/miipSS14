@@ -1,3 +1,9 @@
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
+% Aufgabe 1a
 function [C]=ourCov(D)
 %D=D';
 [n,d]=size(D);

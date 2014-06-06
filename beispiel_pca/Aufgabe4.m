@@ -1,4 +1,8 @@
-
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
 % Aufgabe 4 %
 % Untersuchungen in 3D
 function Aufgabe4
@@ -13,11 +17,11 @@ meanvec = mean(data,2);
 X = bsxfun( @minus, data, meanvec ); %zeilen mittelwert abziehen 
 
 
-% 4a %
+% Aufgabe 4a %
 plot3DPCA( data', meanvec', EVec, EVal, 1, 0 );
 
 
-% 4b %
+% Aufgabe 4b %
 
 %x = EVec( :,2 )
 

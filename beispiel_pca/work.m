@@ -1,3 +1,9 @@
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
+% unnötige datei
 load('daten.mat');
 
 data = data1;
