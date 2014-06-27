@@ -57,7 +57,7 @@ csum = csum / sum( tval ) %prozentzahlen
 
 %Gesamtvarianz 100%
 %alle Komponenten: 100%
-b = randn(1,hv).*sqrt( tval(1) ); %TODO: * standardabweichung ? Hauptvektoren
+b = randn(1,hv).*sqrt( tval(1) );
 plotShape( meanshape, tvec( : , 1:hv ), b );
 axis equal
 %title('100% Varianz')
