@@ -40,7 +40,7 @@ Y= Y(:);
 %size( Y )
 %size( haarlike )
 
-features = [ single(gradX), gradY, grauwert, X, Y, haarlike ]; %grauwertFeature, GradX, GradY, X-, Y-Koordinate, HaarlikeFeatures
+features = [ int64(gradX), gradY, grauwert, X, Y, haarlike ]; %grauwertFeature, GradX, GradY, X-, Y-Koordinate, HaarlikeFeatures
 
 
 end
