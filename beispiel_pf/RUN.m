@@ -12,6 +12,7 @@ function RUN()
 pfAufgabe1;
 pfAufgabe2;
 pfAufgabe3;    
+pfAufgabe4;
 
 end
 

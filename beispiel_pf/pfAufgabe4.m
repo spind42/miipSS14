@@ -1,7 +1,11 @@
-%Aufgabe4
-%Aufgabe 4.a siehe train.m, predict.m%
+%
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+%
+% Aufgabe4 
 function pfAufgabe4
-%Aufgabe 4.b/c%
+%Aufgabe 4b 4c%
 clear all;
 close all;
 load ('handdata.mat');
@@ -48,10 +52,14 @@ function myOptimize( image, images, masks, aligned );
     maxScaling= 1.2;
     maxTranslationx= size(probs,1)*0.6;
     maxTranslationy=size(probs,2)*0.6;
-    minimums=[minEVals',minRotation,minScaling,minTranslationx,minTranslationy]; %MinVektor der Optimierungsfunktion%
-    maximums=[maxEVals',maxRotation,maxScaling,maxTranslationx,maxTranslationy]; %MaxVektor der Optimierungsfunktion%
+    %MinVektor der Optimierungsfunktion%
+    minimums=[minEVals,minRotation,minScaling,minTranslationx,minTranslationy]; 
+    %MaxVektor der Optimierungsfunktion%
+    maximums=[maxEVals,maxRotation,maxScaling,maxTranslationx,maxTranslationy]; 
 
-    optimize(costFunction,minimums',maximums',@drawPopulation);                 %Optimierung des erstellten Shapes, Uebergabe:Kostenfunktion(mit Shape),MinVektor,MaxVektor,Plot der Populations)
+    %Optimierung des erstellten Shapes, Uebergabe:Kostenfunktion(mit
+    %Shape),MinVektor,MaxVektor,Plot der Populations)
+    optimize(costFunction,minimums',maximums',@drawPopulation);                 
 end
 
 

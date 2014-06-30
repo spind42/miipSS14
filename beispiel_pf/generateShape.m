@@ -43,7 +43,7 @@ function [shape] = generateShape( meanshape, EVecs, p )
     shape = horzcat( vecshape(:,1)', vecshape(:,2)' ); %Plot shape braucht horizontales "array"
     
  
-    plotShape( meanshape, shape );
+    
     
     
 end

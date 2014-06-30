@@ -1,3 +1,11 @@
+%
+%
+% 1028660 Seyed Ehsan Hosseini
+% 0828742 Stephann Spindler
+% DIE GROSSE RUN FUNCTION %
+%
+% Aufgabe1
+%
 function pfAufgabe1()
 
     clear all;
