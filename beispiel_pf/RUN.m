@@ -9,9 +9,9 @@
 function RUN()
 
 
-pfAufgabe1
-pfAufgabe2
-    
+pfAufgabe1;
+pfAufgabe2;
+pfAufgabe3;    
 
 end
 
